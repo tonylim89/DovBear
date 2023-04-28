@@ -28,18 +28,36 @@ jobs:
         with:
           # For posting a rich message using Block Kit
           payload: |
-            {
-              "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "Hello, Assistant to the Regional Manager Dwight! *Michael Scott* wants to know where you'd like to take the Paper Company investors to dinner tonight.\n\n *Please select a restaurant:*"
-                  }
+          {
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "plain_text",
+                  "text": "This is a plain text section block.",
+                  "emoji": true
                 }
-              ]
-            }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "This is a section block with a button."
+                },
+                "accessory": {
+                  "type": "button",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "Click Me",
+                    "emoji": true
+                  },
+                  "value": "click_me_123",
+                  "url": ${{ vars.RAILWAY_URL }},
+                  "action_id": "button-action"
+                }
+              }
+            ]
+          }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
