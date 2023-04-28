@@ -31,6 +31,6 @@ jobs:
 
       - name: Send Slack notification
         run: |
-          MESSAGE="Your application has been deployed! :tada: <${{ env.DEPLOYMENT_URL }}|Click here> to visit the site."
-          PAYLOAD="{\"text\": \"$MESSAGE\"}"
-          curl -s -X POST -H 'Content-type: application/json' --data "$PAYLOAD" ${{ secrets.SLACK_WEBHOOK_URL }}
+          DEPLOYMENT_URL=$(railway variables get --name RAILWAY_STATIC_URL)
+          echo "DEPLOYMENT_URL=$DEPLOYMENT_URL" >> $GITHUB_ENV
+          echo "::set-output name=deployment_url::$DEPLOYMENT_URL"
