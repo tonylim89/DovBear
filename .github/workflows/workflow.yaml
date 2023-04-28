@@ -36,27 +36,27 @@ jobs:
                   "fields": [
                     {
                       "type": "plain_text",
-                      "text": "*this is plain_text text*",
+                      "text": "Area 1",
                       "emoji": true
                     },
                     {
                       "type": "plain_text",
-                      "text": "*this is plain_text text*",
+                      "text": "*Area 2",
                       "emoji": true
                     },
                     {
                       "type": "plain_text",
-                      "text": "*this is plain_text text*",
+                      "text": "Area 3",
                       "emoji": true
                     },
                     {
                       "type": "plain_text",
-                      "text": "*this is plain_text text*",
+                      "text": "Area 4",
                       "emoji": true
                     },
                     {
                       "type": "plain_text",
-                      "text": "*this is plain_text text*",
+                      "text": "Area 5",
                       "emoji": true
                     }
                   ]
