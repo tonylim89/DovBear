@@ -36,29 +36,29 @@ jobs:
                   "fields": [
                     {
                       "type": "plain_text",
-                      "text": "Name: Tony Lim Ge Zhong",
+                      "text": "Area 1",
                       "emoji": true
                     },
                     {
                       "type": "plain_text",
-                      "text": "Email: e1112894@u.nus.edu",
+                      "text": "*Area 2",
                       "emoji": true
                     },
                     {
                       "type": "plain_text",
-                      "text": "Metriculation: ABCDEFGIDK",
+                      "text": "Area 3",
                       "emoji": true
                     },
                     {
                       "type": "plain_text",
-                      "text": "Repository:",
+                      "text": "Area 4",
                       "emoji": true
                     },
                     {
                       "type": "plain_text",
                       "text": "Area 5",
                       "emoji": true
-                    },
+                    }
                   ]
                 },
                 {
