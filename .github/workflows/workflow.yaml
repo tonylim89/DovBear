@@ -35,11 +35,33 @@ jobs:
               "blocks": [
                 {
                   "type": "section",
-                  "text": {
-                    "type": "plain_text",
-                    "text": "This is a plain text section block.",
-                    "emoji": true
-                  }
+                  "fields": [
+                    {
+                      "type": "plain_text",
+                      "text": "*this is plain_text text*",
+                      "emoji": true
+                    },
+                    {
+                      "type": "plain_text",
+                      "text": "*this is plain_text text*",
+                      "emoji": true
+                    },
+                    {
+                      "type": "plain_text",
+                      "text": "*this is plain_text text*",
+                      "emoji": true
+                    },
+                    {
+                      "type": "plain_text",
+                      "text": "*this is plain_text text*",
+                      "emoji": true
+                    },
+                    {
+                      "type": "plain_text",
+                      "text": "*this is plain_text text*",
+                      "emoji": true
+                    }
+                  ]
                 },
                 {
                   "type": "section",
@@ -61,6 +83,7 @@ jobs:
                 }
               ]
             }
+
 
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
