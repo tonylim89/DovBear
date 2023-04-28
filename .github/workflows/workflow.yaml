@@ -55,6 +55,9 @@ jobs:
                       "emoji": true
                     },
                     {
+                      "type": "plain_text",
+                      "text": "",
+                      "emoji": true
                     },
                     {
                       "type": "plain_text",
