@@ -56,14 +56,9 @@ jobs:
                     },
                     {
                       "type": "plain_text",
-                      "text": " ",
+                      "text": "Area 5",
                       "emoji": true
                     },
-                    {
-                      "type": "plain_text",
-                      "url": "www.google.com",
-                      "emoji": true
-                    }
                   ]
                 },
                 {
