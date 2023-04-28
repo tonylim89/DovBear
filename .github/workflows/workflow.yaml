@@ -26,6 +26,6 @@ jobs:
         id: slack
         uses: slackapi/slack-github-action@v1.23.0
         with:
-          slack-message: 'Deployment completed! <${{ env.DEPLOYMENT_URL }}|Click here> to visit the site.'
+          slack-message: 'Deployment completed! <${{ secrets.RAILWAY_URL }}|Click here> to visit the site.'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
