@@ -22,6 +22,9 @@ jobs:
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
 
+      - name: Set RAILWAY_URL environment variable
+        run: echo "RAILWAY_URL=$(railway variables get --name RAILWAY_STATIC_URL)" >> $GITHUB_ENV
+
       - name: Send custom JSON data to Slack workflow
         id: slack
         uses: slackapi/slack-github-action@v1.23.0
@@ -52,7 +55,7 @@ jobs:
                       "emoji": true
                     },
                     "value": "click_me_123",
-                    "url": ${{ vars.RAILWAY_URL }},
+                    "url": "${{ env.RAILWAY_URL }}",
                     "action_id": "button-action"
                   }
                 }
