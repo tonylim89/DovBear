@@ -1,0 +1,12 @@
+{
+  "name": "dov-bear",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tonylim89 <tonylim9@hotmail.com>",
+  "license": "ISC",
+  "repository": "https://github.com/tonylim89/DovBear.git"
+}
