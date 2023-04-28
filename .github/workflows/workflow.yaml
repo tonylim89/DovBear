@@ -52,7 +52,7 @@ jobs:
                       "emoji": true
                     },
                     "value": "click_me_123",
-                    "url": ${{ vars.RAILWAY_URL }},
+                    "url": ${{ var.RAILWAY_URL }},
                     "action_id": "button-action"
                   }
                 }
