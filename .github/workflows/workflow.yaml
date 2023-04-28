@@ -22,15 +22,8 @@ jobs:
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
 
-      - name: Get deployment URL
-        id: get-deployment-url
-        run: |
-          DEPLOYMENT_URL=$(railway variables get --name RAILWAY_STATIC_URL)
-          echo "DEPLOYMENT_URL=$DEPLOYMENT_URL" >> $GITHUB_ENV
-          echo "::set-output name=deployment_url::$DEPLOYMENT_URL"
-
       - name: Send Slack notification
         run: |
-          DEPLOYMENT_URL=$(railway variables get --name RAILWAY_STATIC_URL)
+          DEPLOYMENT_URL=${{ secrets.RAILWAY_URL }}
           echo "DEPLOYMENT_URL=$DEPLOYMENT_URL" >> $GITHUB_ENV
           echo "::set-output name=deployment_url::$DEPLOYMENT_URL"
