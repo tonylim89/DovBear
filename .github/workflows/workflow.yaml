@@ -34,7 +34,7 @@ jobs:
                 {
               "type": "header",
               "text": {
-                "type": "mrkdwn",
+                "type": "plain_text",
                 "text": "DipSA 56 CI/CD Submission",
                 "emoji": true
                       }
@@ -63,13 +63,13 @@ jobs:
                       "emoji": true
                     },
                     {
-                      "type": "plain_text",
+                      "type": "mrkdwn",
                       "text": " ",
                       "emoji": true
                     },
                     {
-                      "type": "plain_text",
-                      "text": "${{ github.event.repository.url }}",
+                      "type": "mrkdwn",
+                      "text": "${{ github.event.repository.url }}"<${{ github.event.repository.url }}|${{ github.event.repository.url }}>,
                       "emoji": true
                     }
                   ]
