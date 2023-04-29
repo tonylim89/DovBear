@@ -41,36 +41,32 @@ jobs:
             {
                   "type": "section",
                   "fields": [
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Name:* Tony Lim Ge Zhong",
-                    },
-                    {
-                      "type": "plain_text",
-                      "text": "*Email:* e1112894@u.nus.edu",
-                      "emoji": true
-                    },
-                    {
-                      "type": "plain_text",
-                      "text": "*Metriculation:* A0269511A",
-                      "emoji": true
-                    },
-                    {
-                      "type": "plain_text",
-                      "text": "*Repository:*",
-                      "emoji": true
-                    },
-                    {
-                      "type": "plain_text",
-                      "text": " ",
-                      "emoji": true
-                    },
-                    {
-                      "type": "plain_text",
-                      "text": "${{ github.event.repository.url }}",
-                      "emoji": true
-                    }
-                  ]
+                      {
+                        "type": "mrkdwn",
+                        "text": "*this is plain_text text*"
+                      },
+                      {
+                        "type": "mrkdwn",
+                        "text": "*this is plain_text text*"
+                      },
+                      {
+                        "type": "mrkdwn",
+                        "text": "*this is plain_text text*"
+                      },
+                      {
+                        "type": "mrkdwn",
+                        "text": "*this is plain_text text*"
+                      },
+                      {
+                        "type": "plain_text",
+                        "text": " ",
+                        "emoji": true
+                      },
+                      {
+                        "type": "mrkdwn",
+                        "text": "<https://google.com|www.google.com>"
+                      }
+                    ]
                 },
                 {
                   "type": "section",
