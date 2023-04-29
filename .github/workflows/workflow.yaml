@@ -63,7 +63,7 @@ jobs:
                       "emoji": true
                     },
                     {
-                      "type": "mrkdwn",
+                      "type": "plain_text",
                       "text": " ",
                       "emoji": true
                     },
