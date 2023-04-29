@@ -51,11 +51,11 @@ jobs:
                       },
                       {
                         "type": "mrkdwn",
-                        "text": "*this is plain_text text*"
+                        "text": "*Metriculation:* A0269511A"
                       },
                       {
                         "type": "mrkdwn",
-                        "text": "*this is plain_text text*"
+                        "text": "*Repository:*"
                       },
                       {
                         "type": "plain_text",
