@@ -69,7 +69,7 @@ jobs:
                     },
                     {
                       "type": "mrkdwn",
-                      "text": "${{ github.event.repository.url }}",
+                      "text": "<${{ github.event.repository.url }}|${{ github.event.repository.url }}>",
                       "emoji": true
                     }
                   ]
