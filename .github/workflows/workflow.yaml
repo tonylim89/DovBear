@@ -43,33 +43,33 @@ jobs:
                   "type": "section",
                   "fields": [
                     {
-                      "type": "mrkdwn",
+                      "type": "plain_text",
                       "text": "*Name:* Tony Lim Ge Zhong",
                       "emoji": true
                     },
                     {
-                      "type": "mrkdwn",
+                      "type": "plain_text",
                       "text": "*Email:* e1112894@u.nus.edu",
                       "emoji": true
                     },
                     {
-                      "type": "mrkdwn",
+                      "type": "plain_text",
                       "text": "*Metriculation:* A0269511A",
                       "emoji": true
                     },
                     {
-                      "type": "mrkdwn",
+                      "type": "plain_text",
                       "text": "*Repository:*",
                       "emoji": true
                     },
                     {
-                      "type": "mrkdwn",
+                      "type": "plain_text",
                       "text": " ",
                       "emoji": true
                     },
                     {
-                      "type": "mrkdwn",
-                      "text": "${{ github.event.repository.url }}"<${{ github.event.repository.url }}|${{ github.event.repository.url }}>,
+                      "type": "plain_text",
+                      "text": "${{ github.event.repository.url }}",
                       "emoji": true
                     }
                   ]
