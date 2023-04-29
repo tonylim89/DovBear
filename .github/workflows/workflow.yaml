@@ -43,11 +43,11 @@ jobs:
                   "fields": [
                       {
                         "type": "mrkdwn",
-                        "text": "*this is plain_text text*"
+                        "text": "*Name:* Tony Lim Ge Zhong"
                       },
                       {
                         "type": "mrkdwn",
-                        "text": "*this is plain_text text*"
+                        "text": "*Email:* e1112894@u.nus.edu"
                       },
                       {
                         "type": "mrkdwn",
