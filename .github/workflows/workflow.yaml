@@ -72,7 +72,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "This is a section block with a button."
+                    "text": "${{ vars.RAILWAY_URL }}"
                   },
                   "accessory": {
                     "type": "button",
