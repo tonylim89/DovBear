@@ -6,91 +6,92 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '#NORUN')"
+      runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v2
 
-      - name: Use Node 16
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16.x
+        - name: Use Node 16
+          uses: actions/setup-node@v2
+          with:
+            node-version: 16.x
 
-      - name: Install Railway
-        run: npm i -g @railway/cli
+        - name: Install Railway
+          run: npm i -g @railway/cli
 
-      - name: Deploy
-        run: railway up
-        env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+        - name: Deploy
+          run: railway up
+          env:
+            RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
 
-      - name: Send custom JSON data to Slack workflow
-        id: slack
-        uses: slackapi/slack-github-action@v1.23.0
-        with:
-          # For posting a rich message using Block Kit
-          payload: |
-            {
-              "blocks": [
-                {
-              "type": "header",
-              "text": {
-                "type": "plain_text",
-                "text": "DipSA 56 CI/CD Submission",
-                "emoji": true
-                      }
-                },
-            {
-                  "type": "section",
-                  "fields": [
-                      {
-                        "type": "mrkdwn",
-                        "text": "*Name:* Tony Lim Ge Zhong"
-                      },
-                      {
-                        "type": "mrkdwn",
-                        "text": "*Email:* e1112894@u.nus.edu"
-                      },
-                      {
-                        "type": "mrkdwn",
-                        "text": "*Metriculation:* A0269511A"
-                      },
-                      {
-                        "type": "mrkdwn",
-                        "text": "*Repository:*"
-                      },
-                      {
+        - name: Send custom JSON data to Slack workflow
+          id: slack
+          uses: slackapi/slack-github-action@v1.23.0
+          with:
+            # For posting a rich message using Block Kit
+            payload: |
+              {
+                "blocks": [
+                  {
+                "type": "header",
+                "text": {
+                  "type": "plain_text",
+                  "text": "DipSA 56 CI/CD Submission",
+                  "emoji": true
+                        }
+                  },
+              {
+                    "type": "section",
+                    "fields": [
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Name:* Tony Lim Ge Zhong"
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Email:* e1112894@u.nus.edu"
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Metriculation:* A0269511A"
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Repository:*"
+                        },
+                        {
+                          "type": "plain_text",
+                          "text": " ",
+                          "emoji": true
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "${{ github.event.repository.url }}"
+                        }
+                      ]
+                  },
+                  {
+                    "type": "section",
+                    "text": {
+                      "type": "mrkdwn",
+                      "text": "${{ vars.RAILWAY_URL }}"
+                    },
+                    "accessory": {
+                      "type": "button",
+                      "text": {
                         "type": "plain_text",
-                        "text": " ",
+                        "text": "Go",
                         "emoji": true
                       },
-                      {
-                        "type": "mrkdwn",
-                        "text": "${{ github.event.repository.url }}"
-                      }
-                    ]
-                },
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "${{ vars.RAILWAY_URL }}"
-                  },
-                  "accessory": {
-                    "type": "button",
-                    "text": {
-                      "type": "plain_text",
-                      "text": "Go",
-                      "emoji": true
-                    },
-                    "value": "click_me_123",
-                    "url": "${{ vars.RAILWAY_URL }}",
-                    "action_id": "button-action"
+                      "value": "click_me_123",
+                      "url": "${{ vars.RAILWAY_URL }}",
+                      "action_id": "button-action"
+                    }
                   }
-                }
-              ]
-            } 
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+                ]
+              } 
+          env:
+            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+            SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
