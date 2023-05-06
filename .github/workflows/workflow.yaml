@@ -2,7 +2,7 @@ name: CA
 on:
   push:
       branches:
-      - main
+      - release/v1.0
 jobs:
   deploy:
     runs-on: ubuntu-latest
