@@ -1,13 +1,12 @@
 name: CA
 on:
   push:
-    branches:
-      - 'release/v1.0'
-
+      branches:
+      - main
 jobs:
   deploy:
     runs-on: ubuntu-latest
- 
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
