@@ -6,25 +6,28 @@ on:
 
 jobs:
   deploy:
-    if: "!contains(github.event.head_commit.message, '#NORUN')"
       runs-on: ubuntu-latest
 
       steps:
         - name: Checkout
           uses: actions/checkout@v2
+          if: "!contains(github.event.head_commit.message, '#NORUN')"
 
         - name: Use Node 16
           uses: actions/setup-node@v2
           with:
             node-version: 16.x
+          if: "!contains(github.event.head_commit.message, '#NORUN')"
 
         - name: Install Railway
           run: npm i -g @railway/cli
+          if: "!contains(github.event.head_commit.message, '#NORUN')"
 
         - name: Deploy
           run: railway up
           env:
             RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          if: "!contains(github.event.head_commit.message, '#NORUN')"
 
         - name: Send custom JSON data to Slack workflow
           id: slack
@@ -95,3 +98,4 @@ jobs:
           env:
             SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
             SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+          if: "!contains(github.event.head_commit.message, '#NORUN')"
