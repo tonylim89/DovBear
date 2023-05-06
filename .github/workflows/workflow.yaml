@@ -4,6 +4,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+      branches:
+        - 'release/v[0-9]+(\.[0-9]+)'
 
     steps:
       - name: Checkout
@@ -21,7 +23,7 @@ jobs:
         run: railway up
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
- 
+
       - name: Send custom JSON data to Slack workflow
         id: slack
         uses: slackapi/slack-github-action@v1.23.0
